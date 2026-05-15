@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+<Base title={`${site.name} — portfolio`}>
+  <header>
+    <h1>{site.name}</h1>
+    <p class="bio">
+      based in <span class="accent">{site.city}</span>. {site.blurb}
+    </p>
+    <nav class="socials">
+      {site.socials.map((s) => s.href ? <a href={s.href}>{s.label}</a> : <span>{s.label}</span>)}
+    </nav>
+  </header>
+
+  <section>
+    <h2>projects</h2>
+    <ul class="projects">
+      {site.projects.map((p) => (
+        <li>
+          <a href={p.href}><span class="name">{p.name}</span></a>
+          <span class="badge">{p.updated}</span>
+          <p>{p.blurb}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {site.writing.length > 0 && (
+    <section>
+      <h2>writing</h2>
+      <ul class="links">
+        {site.writing.map((w) => (
+          <li><a href={w.href}>{w.title}</a> <time>{w.date}</time></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section>
+    <h2>elsewhere</h2>
+    <ul class="links">
+      {site.elsewhere.map((e) => (
+        <li><a href={e.href}>{e.label}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <footer>
+    <p>© {new Date().getFullYear()} {site.name}</p>
+  </footer>
+</Base>
