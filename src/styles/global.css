@@ -59,8 +59,15 @@
 .ascii-tv  { right: 1rem; }
 
 @media (max-width: 720px) {
-  .ascii-cat,
   .ascii-tv { display: none; }
+  .ascii-cat {
+    position: static;
+    width: fit-content;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.7rem;
+  }
 }
 
 .theme-toggle {
@@ -125,7 +132,8 @@ h1::before { content: "$ "; color: var(--accent); }
 
 .socials {
   display: flex;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
   font-family: var(--mono);
   font-size: 0.85rem;
 }
@@ -204,9 +212,10 @@ ul { list-style: none; }
 
 .links li {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1rem;
+  gap: 0.25rem 1rem;
   padding: 0.35rem 0;
   border-bottom: 1px dotted var(--line);
 }
@@ -237,3 +246,14 @@ footer {
 }
 
 ::selection { background: var(--selection-bg); color: var(--selection-fg); }
+
+@media (max-width: 600px) {
+  body { padding: 2.5rem 1.25rem; }
+  header { margin-bottom: 2.5rem; }
+  section { margin-bottom: 2rem; padding-top: 1.5rem; }
+  footer { margin-top: 2.5rem; padding-top: 1.5rem; }
+  .theme-toggle { bottom: 1rem; right: 1rem; padding: 0.3rem 0.55rem; font-size: 0.75rem; }
+  .socials { font-size: 0.8rem; }
+  .projects p { font-size: 0.9rem; }
+  .links li { padding: 0.5rem 0; }
+}
