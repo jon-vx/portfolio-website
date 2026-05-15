@@ -9,7 +9,13 @@ import { site } from "../data/site";
       based in <span class="accent">{site.city}</span>. {site.blurb}
     </p>
     <nav class="socials">
-      {site.socials.map((s) => s.href ? <a href={s.href}>{s.label}</a> : <span>{s.label}</span>)}
+      {site.socials.map((s) =>
+        s.copy
+          ? <button type="button" class="copy-btn" data-copy={s.copy} aria-label={`copy ${s.copy} to clipboard`}>{s.label}</button>
+          : s.href
+            ? <a href={s.href}>{s.label}</a>
+            : <span>{s.label}</span>
+      )}
     </nav>
   </header>
 
@@ -38,9 +44,9 @@ import { site } from "../data/site";
   )}
 
   <section>
-    <h2>elsewhere</h2>
+    <h2>other</h2>
     <ul class="links">
-      {site.elsewhere.map((e) => (
+      {site.other.map((e) => (
         <li><a href={e.href}>{e.label}</a></li>
       ))}
     </ul>
@@ -49,4 +55,20 @@ import { site } from "../data/site";
   <footer>
     <p>© {new Date().getFullYear()} {site.name}</p>
   </footer>
+
+  <script is:inline>
+    document.querySelectorAll(".copy-btn").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const text = btn.dataset.copy;
+        const original = btn.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+          btn.textContent = "copied!";
+        } catch {
+          btn.textContent = "copy failed";
+        }
+        setTimeout(() => { btn.textContent = original; }, 1500);
+      });
+    });
+  </script>
 </Base>

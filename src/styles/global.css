@@ -1,34 +1,71 @@
+/* Domino Still Life — warm earth tones (brass, paper, olive, oxidized wood) */
 :root {
-  --bg: #fafaf7;
-  --fg: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #485fc6;
-  --line: #e5e5e0;
-  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
-  --sans: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+  --bg: #0c0c0c;
+  --fg: #e6e6e6;
+  --muted: #7f8466;
+  --accent: #d0aa56;
+  --accent-deep: #c05a3e;
+  --line: #2a2618;
+  --selection-bg: #2f3549;
+  --selection-fg: #f3ead0;
+  --badge-fg: #1a1614;
+  --dot: rgba(230, 230, 230, 0.05);
+  --mono: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Noto Sans", "Inter", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f0f0f;
-    --fg: #e8e8e8;
-    --muted: #888;
-    --accent: #8aa0ff;
-    --line: #232323;
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f3ead0;
+    --fg: #2a251a;
+    --muted: #6f6a52;
+    --accent: #9b7632;
+    --accent-deep: #7b3428;
+    --line: #d4c89a;
+    --selection-bg: #d0aa56;
+    --selection-fg: #1a1614;
+    --badge-fg: #f3ead0;
+    --dot: rgba(42, 37, 26, 0.08);
   }
 }
 
-:root[data-theme="dark"] {
-  --bg: #0f0f0f;
-  --fg: #e8e8e8;
-  --muted: #888;
-  --accent: #8aa0ff;
-  --line: #232323;
+:root[data-theme="light"] {
+  --bg: #f3ead0;
+  --fg: #2a251a;
+  --muted: #6f6a52;
+  --accent: #9b7632;
+  --accent-deep: #7b3428;
+  --line: #d4c89a;
+  --selection-bg: #d0aa56;
+  --selection-fg: #1a1614;
+  --badge-fg: #f3ead0;
+  --dot: rgba(42, 37, 26, 0.08);
+}
+
+.ascii-cat,
+.ascii-tv {
+  position: fixed;
+  top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  line-height: 1.1;
+  color: var(--muted);
+  white-space: pre;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ascii-cat { left: 1rem; }
+.ascii-tv  { right: 1rem; }
+
+@media (max-width: 720px) {
+  .ascii-cat,
+  .ascii-tv { display: none; }
 }
 
 .theme-toggle {
   position: fixed;
-  top: 1.25rem;
+  bottom: 1.25rem;
   right: 1.25rem;
   background: transparent;
   color: var(--muted);
@@ -48,7 +85,10 @@
 html { font-size: 15px; }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--dot) 1px, transparent 1.5px);
+  background-size: 16px 16px;
+  background-attachment: fixed;
   color: var(--fg);
   font-family: var(--sans);
   line-height: 1.6;
@@ -73,7 +113,7 @@ h1 {
   margin-bottom: 1rem;
 }
 
-h1::before { content: "$ "; color: var(--muted); }
+h1::before { content: "$ "; color: var(--accent); }
 
 .bio {
   color: var(--muted);
@@ -90,15 +130,21 @@ h1::before { content: "$ "; color: var(--muted); }
   font-size: 0.85rem;
 }
 
-.socials a {
+.socials a,
+.socials .copy-btn {
   color: var(--fg);
   text-decoration: none;
+  border: none;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 2px;
+  padding: 0 0 2px;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
 
-.socials a:hover { color: var(--accent); border-color: var(--accent); }
+.socials a:hover,
+.socials .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
 
 section {
   margin-bottom: 3rem;
@@ -144,9 +190,10 @@ ul { list-style: none; }
   font-family: var(--mono);
   font-size: 0.7rem;
   background: var(--accent);
-  color: #fff;
+  color: var(--badge-fg);
   border-radius: 3px;
   vertical-align: 2px;
+  font-weight: 600;
 }
 
 .projects p {
@@ -189,4 +236,4 @@ footer {
   color: var(--muted);
 }
 
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--selection-bg); color: var(--selection-fg); }

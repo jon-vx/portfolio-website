@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+<Base title={`uses — ${site.name}`}>
+  <header>
+    <h1>uses</h1>
+    <p class="bio">what's on my desk and in my dotfiles. updated occasionally.</p>
+    <nav class="socials">
+      <a href="/">← home</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>machine</h2>
+    <ul class="links">
+      <li><span>laptop</span><span>system76 darter pro (darp11)</span></li>
+      <li><span>cpu</span><span>intel core ultra 7 255h (16c)</span></li>
+      <li><span>gpu</span><span>intel integrated</span></li>
+      <li><span>ram</span><span>16 gib</span></li>
+      <li><span>display</span><span>1920×1200, 16", 60 hz</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>software</h2>
+    <ul class="links">
+      <li><span>os</span><span>ubuntu 24.04 lts (noble numbat)</span></li>
+      <li><span>wm</span><span>sway 1.9 (wayland)</span></li>
+      <li><span>shell</span><span>bash</span></li>
+      <li><span>terminal</span><span>ghostty</span></li>
+      <li><span>editor</span><span>neovim · lazy.nvim, mason, treesitter, telescope, mini.nvim</span></li>
+      <li><span>multiplexer</span><span>tmux</span></li>
+      <li><span>launcher</span><span>fuzzel</span></li>
+      <li><span>bar</span><span>waybar</span></li>
+      <li><span>notifications</span><span>mako</span></li>
+      <li><span>browser</span><span>zen</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>theme &amp; fonts</h2>
+    <ul class="links">
+      <li><span>palette</span><span>domino still life — brass, paper, olive, oxidized wood</span></li>
+      <li><span>mono font</span><span>jetbrainsmono nerd font</span></li>
+      <li><span>sans font</span><span>noto sans</span></li>
+      <li><span>icons</span><span>gruvbox</span></li>
+      <li><span>cursor</span><span>peardark</span></li>
+      <li><span>dotfiles</span><a href="https://github.com/jon-vx/dotfiles">github.com/jon-vx/dotfiles</a></li>
+    </ul>
+  </section>
+</Base>
