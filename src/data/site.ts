@@ -8,6 +8,22 @@ export const site = {
     { label: "chess.com", href: "https://www.chess.com/member/jonvx0" },
     { label: "jonvx0@gmail.com", copy: "jonvx0@gmail.com" },
   ],
+  work: [
+    {
+      org: "machine psychology @ umass boston",
+      role: "undergraduate research fellow",
+      period: "jun 2026 - present",
+      href: "https://mpsych.org/",
+      blurb: "",
+    },
+    {
+      org: "bestella web design",
+      role: "founder",
+      period: "jan 2026 - present",
+      href: "https://www.bestellawebdesign.com/",
+      blurb: "",
+    },
+  ],
   projects: [
     {
       name: "inia-package",
@@ -32,12 +48,6 @@ export const site = {
       href: "https://github.com/bronsdonayden/EntocellularAnnotate",
       updated: "research practicum",
       blurb: "fine-tuned Cellpose (cyto3 + SAM) on phase-contrast microscopy for cell segmentation. AP@0.5: 0.523→0.624 (cyto3), 0.515→0.688 (SAM). built an annotation tool with model-assisted pre-labeling.",
-    },
-    {
-      name: "bestella-web-design",
-      href: "https://www.bestellawebdesign.com/",
-      updated: "founder",
-      blurb: "web design studio shipping fast, SEO-optimized static sites in eleventy on netlify. 90+ pagespeed; one client went from 0 to 12+ inbound contacts/month post-launch.",
     },
   ],
   writing: [],

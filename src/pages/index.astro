@@ -19,6 +19,23 @@ import { site } from "../data/site";
     </nav>
   </header>
 
+  {site.work.length > 0 && (
+    <section>
+      <h2>work</h2>
+      <ul class="projects">
+        {site.work.map((w) => (
+          <li>
+            {w.href
+              ? <a href={w.href}><span class="name">{w.org}</span></a>
+              : <span class="name">{w.org}</span>}
+            <span class="badge">{w.period}</span>
+            <p>{w.role}{w.blurb ? ` · ${w.blurb}` : ""}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   <section>
     <h2>projects</h2>
     <ul class="projects">
