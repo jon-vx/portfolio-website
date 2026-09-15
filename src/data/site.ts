@@ -1,7 +1,7 @@
 export const site = {
   name: "jon allen",
   city: "boston",
-  blurb: "cs + math (minor) student. interested in ml and the web.",
+  blurb: "cs student. interested in ml and the web.",
   socials: [
     { label: "github", href: "https://github.com/jon-vx" },
     { label: "linkedin", href: "https://linkedin.com/in/jonallenvx" },
