@@ -17,7 +17,7 @@ export const site = {
       blurb: "built a browser-based LLM benchmarking platform and implemented WebLLM GPU dispatch batching, reducing generation time by 35–41% for SmolLM2-360M and 21.1% for Llama 3.2 1B.",
     },
     {
-      org: "venture development center (inia biosciences)",
+      org: "venture development center",
       role: "ai/ml engineer",
       period: "jan 2026 - may 2026",
       href: "https://www.umb.edu/vdc/",
@@ -35,7 +35,7 @@ export const site = {
     {
       name: "prisoner's-dilemma",
       href: "https://github.com/jon-vx/prisoners-dilemma",
-      updated: "in development",
+      updated: "",
       blurb: "simulation platform for configurable strategy tournaments. python engine with a react/typescript interface, fastapi service, postgresql persistence, automated tests, and docker compose packaging.",
     },
     {
@@ -60,6 +60,5 @@ export const site = {
   writing: [],
   other: [
     { label: "uses", href: "/uses" },
-    { label: "resume (pdf)", href: "/resume.pdf" },
   ],
 };

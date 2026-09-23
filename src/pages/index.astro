@@ -42,7 +42,7 @@ import { site } from "../data/site";
       {site.projects.map((p) => (
         <li>
           <a href={p.href}><span class="name">{p.name}</span></a>
-          <span class="badge">{p.updated}</span>
+          {p.updated && <span class="badge">{p.updated}</span>}
           <p>{p.blurb}</p>
         </li>
       ))}
