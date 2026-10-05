@@ -1,7 +1,7 @@
 export const site = {
   name: "jon allen",
   city: "boston",
-  blurb: "software engineer building ml systems, inference infrastructure, and performant web applications. cs @ umass boston, graduating may 2027.",
+  blurb: "software engineer building ml systems, inference infrastructure, and performant web applications. cs @ umass boston.",
   socials: [
     { label: "github", href: "https://github.com/jon-vx" },
     { label: "linkedin", href: "https://linkedin.com/in/jonallenvx" },
