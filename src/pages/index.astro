@@ -28,8 +28,8 @@ import { site } from "../data/site";
             {w.href
               ? <a href={w.href}><span class="name">{w.org}</span></a>
               : <span class="name">{w.org}</span>}
-            <span class="badge">{w.period}</span>
-            <p>{w.role}{w.blurb ? ` · ${w.blurb}` : ""}</p>
+            <span class="badge">{w.role}</span>
+            <p>{w.period}{w.blurb ? ` · ${w.blurb}` : ""}</p>
           </li>
         ))}
       </ul>
