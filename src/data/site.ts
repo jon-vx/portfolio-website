@@ -1,7 +1,7 @@
 export const site = {
   name: "jon allen",
   city: "boston",
-  blurb: "cs @ umass. right now i'm making llms run faster in the browser with webgpu.",
+  blurb: "full stack software engineer and undergraduate researcher. cs @ umb.",
   socials: [
     { label: "github", href: "https://github.com/jon-vx" },
     { label: "linkedin", href: "https://linkedin.com/in/jonallenvx" },
