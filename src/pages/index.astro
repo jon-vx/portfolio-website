@@ -28,8 +28,10 @@ import { site } from "../data/site";
             {w.href
               ? <a href={w.href}><span class="name">{w.org}</span></a>
               : <span class="name">{w.org}</span>}
-            <span class="badge">{w.role}</span>
-            <p>{w.period}{w.blurb ? ` · ${w.blurb}` : ""}</p>
+            <p>{w.role} · {w.period}</p>
+            <ul class="bullets">
+              {w.bullets.map((b) => <li>{b}</li>)}
+            </ul>
           </li>
         ))}
       </ul>
@@ -42,8 +44,9 @@ import { site } from "../data/site";
       {site.projects.map((p) => (
         <li>
           <a href={p.href}><span class="name">{p.name}</span></a>
-          {p.updated && <span class="badge">{p.updated}</span>}
-          <p>{p.blurb}</p>
+          <ul class="bullets">
+            {p.bullets.map((b) => <li>{b}</li>)}
+          </ul>
         </li>
       ))}
     </ul>

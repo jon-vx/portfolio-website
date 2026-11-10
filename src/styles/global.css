@@ -191,18 +191,15 @@ ul { list-style: none; }
 .projects a:hover .name { color: var(--accent); }
 .projects a:hover { border-color: var(--accent); }
 
-.badge {
-  display: inline-block;
-  margin-left: 0.5rem;
-  padding: 1px 6px;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  background: var(--accent);
-  color: var(--badge-fg);
-  border-radius: 3px;
-  vertical-align: 2px;
-  font-weight: 600;
+.bullets {
+  list-style: disc;
+  padding-left: 1.1rem;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
+
+.projects .bullets li { margin-bottom: 0.2rem; }
 
 .projects p {
   color: var(--muted);
