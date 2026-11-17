@@ -29,9 +29,11 @@ import { site } from "../data/site";
               ? <a href={w.href}><span class="name">{w.org}</span></a>
               : <span class="name">{w.org}</span>}
             <p>{w.role} · {w.period}</p>
-            <ul class="bullets">
-              {w.bullets.map((b) => <li>{b}</li>)}
-            </ul>
+            {w.bullets.length > 0 && (
+              <ul class="bullets">
+                {w.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

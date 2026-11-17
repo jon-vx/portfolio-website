@@ -10,6 +10,13 @@ export const site = {
   ],
   work: [
     {
+      org: "zus health",
+      role: "incoming software engineer co-op",
+      period: "starts jan 2027",
+      href: "https://zushealth.com/",
+      bullets: [],
+    },
+    {
       org: "machine psychology lab",
       role: "undergraduate research fellow",
       period: "jun 2026 - present",

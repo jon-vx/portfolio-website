@@ -17,8 +17,8 @@
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
     --bg: #f3ead0;
-    --fg: #2a251a;
-    --muted: #6f6a52;
+    --fg: #1f1a12;
+    --muted: #5c5741;
     --accent: #9b7632;
     --accent-deep: #7b3428;
     --line: #d4c89a;
@@ -31,8 +31,8 @@
 
 :root[data-theme="light"] {
   --bg: #f3ead0;
-  --fg: #2a251a;
-  --muted: #6f6a52;
+  --fg: #1f1a12;
+  --muted: #5c5741;
   --accent: #9b7632;
   --accent-deep: #7b3428;
   --line: #d4c89a;
@@ -90,6 +90,11 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { font-size: 15px; }
+
+/* render desktop at the size it looked at 120% browser zoom */
+@media (min-width: 721px) {
+  html { zoom: 1.2; }
+}
 
 body {
   background-color: var(--bg);
